@@ -1,8 +1,11 @@
 #include <stdio.h>
 
-/*
+/**
+ * main -entry point
+ *
  * function that prints
- * with proper
+ * 
+ * with p
  */
 
 int main(void)

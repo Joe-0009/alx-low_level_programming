@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
- * main - prints the size of various types
+ * main - prints with write function
  * Return: 0 if exited properly, non-zero otherwise
  */
 

@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
 
-/** 
- * main - betty style doc
- * 
- * Description : for function main that prints 
- * 
- * Return: Always 0 (Success)  
+
+/**
+ * main - Entry point
+ *
+ * Description: print value of n satus; zero, positive or negative
+ *
+ * Return: Always 0 (Success)
 */
 
 int main(void)
@@ -17,17 +17,14 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	
-	/*My code*/	
+
+	/*my code*/
 	if (n > 0)
-	{
 		printf("%i is positive\n", n);
-	} else if (n == 0)
-	{
+	else if (n == 0)
 		printf("%i is zero\n", n);
-	} else
-	{
+	else
 		printf("%i is negative\n", n);
-	}
+
 	return (0);
 }

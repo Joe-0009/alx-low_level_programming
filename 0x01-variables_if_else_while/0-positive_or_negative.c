@@ -3,6 +3,7 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+
 int main(void)
 {
 	int n;
@@ -12,11 +13,11 @@ int main(void)
 	/* your code goes there */
 	if (n>0)
 	{
-		printf("is positive");
+		printf("%n is positive",n);
 	}else if(n == 0){
-		printf("is zero");
+		printf("%n is zero",n);
 	}else{
-		printf("is negative");
+		printf("%n is negative",n);
 	}
 	return (0);
 }

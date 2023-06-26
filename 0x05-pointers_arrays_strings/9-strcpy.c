@@ -6,7 +6,7 @@
  * @src: input first string
  * @dest: input second string
  *
- * Return : the copied string
+ * Return - the copied string
  */
 
 

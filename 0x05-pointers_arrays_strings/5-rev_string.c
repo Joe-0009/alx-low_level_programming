@@ -23,6 +23,4 @@ void rev_string(char *s)
 		len--;
 	}
 	str[i] = '\0';
-
-	return (str);
 }

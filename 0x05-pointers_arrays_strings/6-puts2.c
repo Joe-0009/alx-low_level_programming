@@ -15,14 +15,12 @@ void puts2(char *str)
 	l = 0;
 
 	while (str[i] != '\0')
-	{
 		l++;
-	}
 
-	while (i < l)
+	while (i <= l)
 	{
 		if (i % 2 == 0)
-			printf("%c", str[i]);
+			putchar(str[i]);
 	}
 	printf("\n");
 }

@@ -6,6 +6,7 @@
  * @src: input first string
  * @dest: input second string
  *
+ * Return : the copied string
  */
 
 
@@ -13,8 +14,15 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	while ((*dest = *src))
-		;
+	char *ptr = dest;
 
-	return (dest);
+	while (*src != '\0')
+	{
+		*dest = *src;
+		*dest++;
+		*src++;
+	}
+	*dest = '\0';
+
+	return (ptr);
 }

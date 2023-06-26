@@ -12,10 +12,9 @@ int _strlen(char *s)
 {
 	int len = 0;
 
-	while (s != '\n')
+	while (s[len]!= '\n')
 	{
-		s++;
-		len++
+		len++;
 	}
-	return (len);
+	return (len+1);
 }

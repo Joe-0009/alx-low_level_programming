@@ -3,7 +3,7 @@
  *
  * @s: input string
  *
- * returns: @s
+ * Return: @s
  *
  */
 

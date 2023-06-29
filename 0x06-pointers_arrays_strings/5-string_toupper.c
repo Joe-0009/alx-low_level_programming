@@ -1,7 +1,7 @@
 /**
- * string_toupper -  function that changes all lowercase letters of a string to uppercase
+ * string_toupper - changes all lowercase letters of a string to uppercase
  *
- * @char: string
+ * @s: string
  *
  * Return: an upercase string
  */

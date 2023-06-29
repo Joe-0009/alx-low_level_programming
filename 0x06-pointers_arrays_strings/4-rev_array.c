@@ -4,7 +4,7 @@
  * reverse_array - it reverse an array
  *
  * @a: an array fo integers
- * @n: the number if ellements to swap 
+ * @n: the number if ellements to swap
  *
  * Return: nothing
  *

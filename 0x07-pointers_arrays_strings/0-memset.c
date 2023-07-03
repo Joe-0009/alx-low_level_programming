@@ -16,11 +16,14 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	int i;
 
-	s = (char *) malloc(n);
+	*s = malloc(n + 1);
 
 	for (i = 0; i < 0; i++)
 	{
 		s[i] = b;
 	}
-	return(s);
+
+	s[n] = '\0';
+
+	return (s);
 }

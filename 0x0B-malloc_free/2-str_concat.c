@@ -32,7 +32,7 @@ char *str_concat(char *s1, char *s2)
 		s3[k] = s1[k];
 	}
 
-	if (s3[k] == NULL)
+	if (s3[k] == '\0')
 	{
 		s3[k] = ' ';
 		k++;

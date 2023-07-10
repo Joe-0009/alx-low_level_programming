@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * _strdup - function that returns a pointer to a newly allocated space in memory
+ * _strdup - that returns a pointer to a newly allocated space in memory
  *
  * @str: string input
  *
@@ -22,6 +22,8 @@ char *_strdup(char *str)
 
 	p = (char *)malloc(i * sizeof(char));
 
+	if (p == NULL)
+		return (NULL);
 	for (j = 0; j < i; j++)
 	{
 		p[j] = str[j];

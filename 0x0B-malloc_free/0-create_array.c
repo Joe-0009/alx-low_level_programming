@@ -14,6 +14,7 @@
 char *create_array(unsigned int size, char c)
 {
 	char *p;
+	char *rem;
 	int i;
 
 	if (size == 0)
@@ -22,12 +23,12 @@ char *create_array(unsigned int size, char c)
 	}
 
 	p = (char *)malloc(size * (sizeof(char)));
-
+	rem = p;
 	while (p[i] != '\0')
 	{
 		p[i] = c;
 		i++;
 	}
 
-	return (p);
+	return (rem);
 }

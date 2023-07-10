@@ -17,15 +17,18 @@ char *str_concat(char *s1, char *s2)
 	char *s3;
 
 	if (s1 == NULL || s2 == NULL)
-		return(NULL);
+		return (NULL);
 
 	while (s1[i] != '\0')
 		i++;
-	
+
 	while (s2[j] != '\0')
 		j++;
 
-	s3 = (char *)malloc(2 + (sizeof(int) * (i + j)));
+	s3 = (char *)malloc(1 + (sizeof(char) * (i + j)));
+	
+	if (s3 == NULL)
+		return (NULL);
 
 	for (k = 0; k < i; k++)
 	{

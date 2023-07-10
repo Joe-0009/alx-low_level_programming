@@ -17,11 +17,13 @@ char *create_array(unsigned int size, char c)
 	int i;
 
 	if (size == 0)
+	{
 		return (NULL);
+	}
 
 	p = (char *)malloc(size * (sizeof(char)));
 
-	while(p[i] != '\0')
+	while (p[i] != '\0')
 	{
 		p[i] = c;
 		i++;

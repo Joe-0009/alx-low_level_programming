@@ -14,12 +14,9 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d)
 	{
-		strncpy(dog->name, name, sizeof(dog->name) - 1);
-		dog->name[sizeof(dog->name) - 1] = '\0';
-
+		dog->name = name;
 		dog->age = age;
+		dog->owner = owner;
 
-		strncpy(dog->owner, owner, sizeof(dog->owner) - 1);
-		dog->owner[sizeof(dog->name) - 1] = '\0';
 	}
 }

@@ -17,10 +17,7 @@ void print_dog(struct dog *d)
 		else
 			prntf("Name: %s\n", d->name);
 
-		if (d->age == NULL)
-			prntf("Age: (nil)\n");
-		else
-			prntf("Age: %.6f\n", d->age);
+		prntf("Age: %.6f\n", d->age);
 
 		if (d->owner == NULL)
 			prntf("Owner: (nil)\n");

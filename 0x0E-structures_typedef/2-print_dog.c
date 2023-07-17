@@ -12,19 +12,19 @@ void print_dog(struct dog *d)
 {
 	if (d)
 	{
-		if (d.name == NULL)
+		if (d->name == NULL)
 			prntf("Name : (nil)\n");
 		else
-			prntf("Name : %s\n", d.name);
+			prntf("Name : %s\n", d->name);
 
-		if (d.age == NULL)
+		if (d->age == NULL)
 			prntf("Age : (nil)\n");
 		else
-			prntf("Age : %.6f\n", d.age);
+			prntf("Age : %.6f\n", d->age);
 
-		if (d.owner == NULL)
+		if (d->owner == NULL)
 			prntf("Owner : (nil)\n");
 		else
-			prntf("Owner : %s\n", d.owner);
+			prntf("Owner : %s\n", d->owner);
 	}
 }

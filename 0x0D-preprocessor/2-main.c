@@ -1,12 +1,16 @@
 #include <stdio.h>
 
-/*
- * a program that prints the name of the file it was compiled from
+/**
+ * main - Entry point
  *
- */
+ * Description: prints the name of the file it was
+ *              compiled from, followed by a new line
+ *
+ * Return: Always 0 (Success)
+*/
 
-void main ()
+int main(void)
 {
-	printf(%s, __FILE__);
-	return(0);
+	printf("%s\n", __FILE__);
+	return (0);
 }

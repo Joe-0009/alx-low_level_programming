@@ -8,7 +8,7 @@
  * @age: the age of the new dog
  * @owner: the name of the new owner
  *
- * Return : new dog
+ * Return: new dog created
  *
  */
 
@@ -19,13 +19,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!d)
 		return (NULL);
 
-	d->name = strncpy(d->name, name, sizeof(d->name) - 1);
-	d->name[sizeof(d->name) - 1] = '\0';
+	d->name = malloc(strlen(name) + 1);
+	if (!d->name)
+		return (NULL)
+	d->name = strncpy(d->name, name);
 
 	d.age = age;
 
-	d->owner = strncpy(d->owner, owner, sizeof(d->owner) - 1);
-	d->owner[sizeof(d->owner) - 1] = '\0';
+	d->owner = malloc(strlen(owner) + 1);
+	if (!d->owner)
+		return (NULL);
+	d->owner = strncpy(d->owner, owner);
 
 	return (d);
 }

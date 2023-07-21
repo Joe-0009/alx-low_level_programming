@@ -2,35 +2,35 @@
 #include <stdio.h>
 
 /**
- * print_strings - a function that prints strings, followed by a new line.
+ * print_strings - a function that prints strings, followed by a new line
  *
- * @separator: is the string to be printed between the strings
- * @n: is the number of strings passed to the function
+ * @separator: pointer to a constant separator
+ * @n: start of input variables
  *
- */
+ * Return: nothing
+*/
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
-	unsigned int str;
-	*char s;
+	unsigned int index;
+	char *str;
 
+	/* iterate the argument list from the start */
 	va_start(ap, n);
 
-	for (str = 0; str < n; str++)
+	for (index = 0; index < n; index++)
 	{
-		s = va_arg(ap, char *);
-		if (s  == NULL)
-		{
+		str = va_arg(ap, char *);
+		if (str)
+			printf("%s", str);
+		else
 			printf("(nil)");
-			exit(98);
-		}
-		printf("%s", s);
 
-		if (separator && str != n - 1)
+		if (separator && index != n - 1)
 			printf("%s", separator);
 	}
-
+	/*clean up*/
 	va_end(ap);
 	printf("\n");
 }

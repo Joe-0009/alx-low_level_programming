@@ -43,7 +43,7 @@ void print_int(va_list arg)
 
 void print_float(va_list arg)
 {
-	float f = va_arg(arg, double);
+	float n = va_arg(arg, double);
 
 	printf("%f", n);
 }
@@ -61,12 +61,12 @@ void print_string(va_list arg)
 {
 	char *str = va_arg(arg, char *);
 
-	if(str == NULL)
+	if (str == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%S", str);
+	printf("%s", str);
 }
 
 /**
@@ -80,6 +80,7 @@ void print_string(va_list arg)
  *
  * Return: nothing
 */
+
 void print_all(const char * const format, ...)
 {
 	va_list ap;

@@ -11,8 +11,9 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fo, fr, fw;
+	int fo, wc, fw;
 
+	wc = 0;
 	if (filename == NULL)
 		return (-1);
 
@@ -21,6 +22,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
+		while (*text_content != '\0')
+			wc++;
 		fw = write(fo, text_context, sizeof(text_content));
 
 		if (fw == -1)

@@ -13,22 +13,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char buffer[letters];
 	ssize_t rd, count;
-	int fd;
+	int op;
 
 	if (filename == NULL)
 		return (0);
 
-	fd = open(filename, 0_RDONLY);
-	if (fd == -1)
+	op = open(filename, O_RDONLY);
+	if (op == -1)
 		return (0);
 
-	rd = read(filename, buffer, sizeof(buffer));
+	rd = read(op, buffer, sizeof(buffer));
 	if (rd == -1)
 		return (0);
 
-	count = write(1, buffer, rd);
+	count = write(STDOUT_FILENO, buffer, rd);
 	if (count == -1 || rd != count)
 		return (0);
 
-	close(file);
+	close(op);
 }

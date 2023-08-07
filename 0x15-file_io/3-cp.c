@@ -2,7 +2,7 @@
 
 
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	char *buffer;
 	int fo_to, fo_fro, fr_fro, fw_to , wc;
@@ -35,7 +35,7 @@ void main(int argc, char *argv[])
 	
 	while ((fr_fro = read(fo_fro, buffer, 1024)) > 0)
 	{
-		fw_to = write(argv[2], buffer, fr_fro);
+		fw_to = write(fo_to, buffer, fr_fro);
 		if (fw_to == -1 || fr_fro != fw_to)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -52,18 +52,16 @@ void main(int argc, char *argv[])
 		close(fo_to);
 	}
 	
-	fclse = close(fo_to);
-	if (fclse == -1)
+	if (close(fo_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fo_to);
 		exit(100);
 	}
 
-	fclse = close(fo_fro);
-	if (fclse == -1)
+	if (close(fo_fro) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fo_fro);
 		exit(100);
 	}
-
+	return(0);
 }

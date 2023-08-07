@@ -11,7 +11,7 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fo, fw, wc = 0;
+	int fo, fw, r,wc = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -19,7 +19,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	fo = open(filename, O_WRONLY | O_APPEND);
 	if (fo == -1)
 		return (-1);
-
+	r = access(fo, W_OK);
+	if (r != 0)
+		return (-1);
 	if (text_content)
 	{
 		while (text_content[wc] != '\0')

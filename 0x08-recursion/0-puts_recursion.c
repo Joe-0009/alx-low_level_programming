@@ -4,7 +4,7 @@
 /**
  * _puts_recursion - a recusrion fucntion that prints
  *
- * @s: the string to be printed 
+ * @s: the string to be printed
  *
  */
 

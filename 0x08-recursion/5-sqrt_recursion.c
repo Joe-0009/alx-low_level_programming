@@ -3,7 +3,7 @@
 /**
  * _squart - _sqrt_recursion
  * @n: integer paramtr
- * @i: integer parameter 
+ * @i: integer parameter
  * Return: sqrt
  */
 int _squart(int n, int i)

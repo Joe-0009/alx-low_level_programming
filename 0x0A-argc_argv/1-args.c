@@ -1,24 +1,12 @@
-#include <stdlib.h>
 #include <stdio.h>
-
 /**
- * main - a program that prints the number of arguments
- *        passed into it
- *
- * @argc: holds the number of arguments passed
- * @argv: array pointer that holds the arguments passed
- *
- * Return: Always 0 (Success)
-*/
-
-int main(int argc, char *argv[])
+ * main - prints the number of arguments passed into it.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
+ */
+int main(int argc, char *argv[] __attribute__((unused)))
 {
-	if (argc > 1)
-	{
-		printf("%d\n", argc - 1);
-	} else if (argc == 1)
-	{
-		printf("0\n");
-	}
+	printf("%d\n", argc - 1);
 	return (0);
 }

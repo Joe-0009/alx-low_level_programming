@@ -1,4 +1,3 @@
-#include "calc.h"
 /**
  * op_add - adds @a and @b
  *

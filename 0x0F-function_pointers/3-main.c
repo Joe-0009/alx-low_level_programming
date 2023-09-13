@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]); /*if argument is string convert to number*/
-	num2 = atoi(argv[3]); /* as stated above */
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 	operator = argv[2];
 
 	if (get_op_func(operator) == NULL || operator[1] != '\0')

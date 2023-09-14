@@ -78,10 +78,10 @@ void print_all(const char * const format, ...)
 	
 	fun_pr printer_functions[] = {
 
-	{'c', pr_char},
-	{'i', pr_int},
-	{'f', pr_float},
-	{'s', pr_string},
+	{"c", pr_char},
+	{"i", pr_int},
+	{"f", pr_float},
+	{"s", pr_string},
 	};
 
 
@@ -92,7 +92,7 @@ void print_all(const char * const format, ...)
 		while (j < 4)
 		{
 
-			if (format[i] == printer_functions[j].sym)
+			if (format[i] == *(printer_functions[j].sym))
 			{
 				printer_functions[j].print_func(ls);
 				if (format[i + 1] != NULL)

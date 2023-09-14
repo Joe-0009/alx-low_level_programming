@@ -69,13 +69,24 @@ void pr_string(va_list ls)
 	else
 		printf("%s", (nil));
 }
+/**
+ * print_all - a function that prints anything
+ *
+ * @format: A string of character representing
+ *          the argument types
+ *
+ * Description: If any argument not of type char,
+ *              int, float or char * is ignored
+ *
+ * Return: nothing
+*/
 
 void print_all(const char * const format, ...)
 {
 	int i = 0;
 	int j;
 	va_list ls;
-	
+
 	fun_pr printer_functions[] = {
 
 	{"c", pr_char},
@@ -95,11 +106,11 @@ void print_all(const char * const format, ...)
 			if (format[i] == *(printer_functions[j].sym))
 			{
 				printer_functions[j].print_func(ls);
-				if (format[i + 1] != NULL)
+				if (*format[i + 1] != '\0')
 				{
 					printf(", ");
 				}
-			}	
+			}
 			j++;
 		}
 	i++;

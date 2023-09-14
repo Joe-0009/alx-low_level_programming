@@ -117,6 +117,6 @@ void print_all(const char * const format, ...)
 	}
 
 	va_end(ls);
-	printf("\n);
+	printf("\n");
 
 }

@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 
 /**
- * pr_char - print a char
+ * print_char - print a char
  *
  * @arg: a list of argument pointing
  *      to the character to be printed
@@ -9,7 +9,7 @@
  * Return: nothing
 */
 
-void pr_char(va_list arg)
+void print_char(va_list arg)
 {
 	char c = va_arg(arg, int);
 
@@ -17,7 +17,7 @@ void pr_char(va_list arg)
 }
 
 /**
- * pr_int - print an integer
+ * print_int - print an integer
  *
  * @arg: a list of argument pointing
  *      to the character to be printed
@@ -25,7 +25,7 @@ void pr_char(va_list arg)
  * Return: nothing
 */
 
-void pr_int(va_list arg)
+void print_int(va_list arg)
 {
 	int n = va_arg(arg, int);
 
@@ -33,7 +33,7 @@ void pr_int(va_list arg)
 }
 
 /**
- * pr_float - print a float
+ * print_float - print a float
  *
  * @arg: a list of argument pointing
  *      to the character to be printed
@@ -41,7 +41,7 @@ void pr_int(va_list arg)
  * Return: nothing
 */
 
-void pr_float(va_list arg)
+void print_float(va_list arg)
 {
 	float n = va_arg(arg, double);
 
@@ -49,7 +49,7 @@ void pr_float(va_list arg)
 }
 
 /**
- * pr_string - print a string
+ * print_string - print a string
  *
  * @arg: a list of argument pointing
  *      to the character to be printed
@@ -57,7 +57,7 @@ void pr_float(va_list arg)
  * Return: nothing
 */
 
-void pr_string(va_list arg)
+void print_string(va_list arg)
 {
 	char *str = va_arg(arg, char *);
 
@@ -118,4 +118,3 @@ void print_all(const char * const format, ...)
 
 	va_end(ap);
 }
-

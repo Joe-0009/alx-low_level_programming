@@ -80,43 +80,35 @@ void pr_string(va_list ls)
  *
  * Return: nothing
 */
-
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	int j;
-	va_list ls;
-
-	fun_pr printer_functions[] = {
-
-	{"c", pr_char},
-	{"i", pr_int},
-	{"f", pr_float},
-	{"s", pr_string},
+	va_list ap;
+	int i = 0, j = 0;
+	char *separator = "";
+	func_printer funcs[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
 	};
 
+	va_start(ap, format);
 
-	va_start(ls, format);
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4)
-		{
-
-			if (format[i] == *(printer_functions[j].sym))
-			{
-				printer_functions[j].print_func(ls);
-				if (*format[i + 1] != '\0')
-				{
-					printf(", ");
-				}
-			}
+		while (j < 4 && (format[i] != *(funcs[j].sym)))
 			j++;
+		if (j < 4)
+		{
+			printf("%s", separator);
+			funcs[j].print_func(ap);
+			separator = ", ";
 		}
-	i++;
+		i++;
 	}
-
-	va_end(ls);
 	printf("\n");
 
+	va_end(ap);
 }
+

@@ -70,4 +70,41 @@ void pr_string(va_list ls)
 		printf("%s", (nil));
 }
 
+void print_all(const char * const format, ...)
+{
+	int i = 0;
+	int j = 0;
+	va_list ls;
+	
+	fun_pr printer_functions[] = {
 
+	{'c', pr_char},
+	{'i', pr_int},
+	{'f', pr_float},
+	{'s', pr_string},
+	};
+
+
+	va_start(ls, format);
+	while (format && format[i])
+	{
+		while (j < 4)
+		{
+
+			if (format[i] == printer_functions[j].sym)
+			{
+				printer_functions[j].print_func(ls);
+				if (format[i + 1] != NULL)
+				{
+					printf(", ");
+				}
+			}	
+			j++;
+		}
+	i++;
+	}
+
+	va_end(ls);
+	printf("\n);
+
+}

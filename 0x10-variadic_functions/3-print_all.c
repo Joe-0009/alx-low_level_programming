@@ -3,72 +3,72 @@
 /**
  * pr_char - print a char
  *
- * @ls: a list of argument pointing
+ * @arg: a list of argument pointing
  *      to the character to be printed
  *
  * Return: nothing
 */
 
-void pr_char(va_list ls)
+void pr_char(va_list arg)
 {
-	char c;
+	char c = va_arg(arg, int);
 
-	c = va_arg(ls, int);
 	printf("%c", c);
 }
+
 /**
  * pr_int - print an integer
  *
- * @ls: a list of argument pointing
+ * @arg: a list of argument pointing
  *      to the character to be printed
  *
  * Return: nothing
 */
 
-void pr_int(va_list ls)
+void pr_int(va_list arg)
 {
-	int ar;
+	int n = va_arg(arg, int);
 
-	ar = va_arg(ls, ar);
-	printf("%d", ar);
+	printf("%d", n);
 }
 
 /**
  * pr_float - print a float
  *
- * @ls: a list of argument pointing
+ * @arg: a list of argument pointing
  *      to the character to be printed
  *
  * Return: nothing
 */
 
-void pr_float(va_list ls)
+void pr_float(va_list arg)
 {
-	float ar;
+	float n = va_arg(arg, double);
 
-	ar = var_ar(ls, double);
-	printf("%f", ar);
+	printf("%f", n);
 }
 
 /**
  * pr_string - print a string
  *
- * @ls: a list of argument pointing
+ * @arg: a list of argument pointing
  *      to the character to be printed
  *
  * Return: nothing
 */
 
-void pr_string(va_list ls)
+void pr_string(va_list arg)
 {
-	char *str;
+	char *str = va_arg(arg, char *);
 
-	str = va_arg(ls, char *);
-	if (str)
-		printf("%s", str);
-	else
-		printf("%s", (nil));
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
 }
+
 /**
  * print_all - a function that prints anything
  *
@@ -80,12 +80,13 @@ void pr_string(va_list ls)
  *
  * Return: nothing
 */
+
 void print_all(const char * const format, ...)
 {
 	va_list ap;
 	int i = 0, j = 0;
 	char *separator = "";
-	fun_pr funcs[] = {
+	func_printer funcs[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -97,7 +98,13 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4 && (format[i] != *(funcs[j].sym)))
+		/**
+		 * 4 equals to the number of funcs present
+		 * so if j is less than four and our current
+		 * format is not equal to format in funcs
+		 * then j becomes j + 1
+		 */
+		while (j < 4 && (format[i] != *(funcs[j].symbol)))
 			j++;
 		if (j < 4)
 		{

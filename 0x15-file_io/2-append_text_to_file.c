@@ -11,25 +11,25 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	size_t file, i, num_ww;
-
+	int fo, fw, wc = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	file = open(filename, O_APPEND | O_WRONLY);
-	if (file == -1)
+	fo = open(filename, O_WRONLY | O_APPEND);
+	if (fo == -1)
 		return (-1);
-
-
-	if (text_content != NULL)
+	if (text_content)
 	{
-		while (text_content[i] != '\0')
-			i++;
-		num_ww = write(file, text_content, i);
-		if (num_ww == NULL)
+		while (text_content[wc] != '\0')
+			wc++;
+		fw = write(fo, text_content, wc);
+		if (fw == -1)
 			return (-1);
 	}
-	close(file);
+
+	close(fo);
+
 	return (1);
 }
+

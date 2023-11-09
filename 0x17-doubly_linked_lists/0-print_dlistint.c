@@ -19,10 +19,10 @@ size_t print_dlistint(const dlistint_t *h)
 		h = h->prev;
 	}
 	
-	while (current != NULL)
+	while (h != NULL)
 	{
-		printf("%d%", current->n);
-		current = curent->next;
+		printf("%d%", h->n);
+		h = h->next;
 		count++;
 	}
 	return (count);
